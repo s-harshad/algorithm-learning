@@ -33,8 +33,8 @@ public class LinkedBagTest {
         bag.add("Item3");
         Assert.assertTrue(!bag.isEmpty());
         Assert.assertEquals(3, bag.size());
-    }    
-    
+    }
+
     @Test
     @DisplayName("Should be able to iterate over items in bag")
     public void iterateOverElements() throws Exception {
@@ -42,13 +42,13 @@ public class LinkedBagTest {
         bag.add("Item1");
         bag.add("Item2");
         bag.add("Item3");
-        
+
         List<String> actuals = new ArrayList<>();
         for (String s : bag) {
             actuals.add(s);
         }
-        
+
         Assert.assertThat(actuals, Matchers.containsInAnyOrder("Item1", "Item2", "Item3"));
-    } 
-    
+    }
+
 }

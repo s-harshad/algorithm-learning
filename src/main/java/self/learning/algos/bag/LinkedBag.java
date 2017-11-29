@@ -4,27 +4,30 @@ import java.util.Iterator;
 import java.util.NoSuchElementException;
 
 /**
- *  The {@code LinkedBag} class represents a bag (or multiset) of generic items
- *  <br>
- *  It supports insertion and iterating over the items in arbitrary order
- *  <p>
- *  This implementation uses a singly linked list with a non-static nested class Node 
- *  <br>
- *  The <em>add</em>, <em>isEmpty</em>, and <em>size</em> operations take constant time
- *  <br>
- *  Iteration takes time proportional to the number of items
+ * The {@code LinkedBag} class represents a bag (or multiset) of generic items
+ * <br>
+ * It supports insertion and iterating over the items in arbitrary order
+ * <p>
+ * This implementation uses a singly linked list with a non-static nested class
+ * Node
+ * <br>
+ * The <em>add</em>, <em>isEmpty</em>, and <em>size</em> operations take
+ * constant time
+ * <br>
+ * Iteration takes time proportional to the number of items
  *
- *  @author Harshad Shrishrimal
- *  @param <Item> generic 
+ * @author Harshad Shrishrimal
+ * @param <Item> generic
  */
 public class LinkedBag<Item> implements Iterable<Item> {
 
-
     /**
      * Helper class for link list implementation
-     * @param <Item> 
+     *
+     * @param <Item>
      */
     private class Node<Item> {
+
         private Item item;
         private Node<Item> next;
     }
@@ -42,6 +45,7 @@ public class LinkedBag<Item> implements Iterable<Item> {
 
     /**
      * Is this bag empty ?
+     *
      * @return true if empty; false otherwise
      */
     public boolean isEmpty() {
@@ -50,6 +54,7 @@ public class LinkedBag<Item> implements Iterable<Item> {
 
     /**
      * Return the number of items in this bag
+     *
      * @return the number of items in this bag
      */
     public int size() {
@@ -58,6 +63,7 @@ public class LinkedBag<Item> implements Iterable<Item> {
 
     /**
      * Adds the item to this bag.
+     *
      * @param item the item to be added to this bag.
      */
     public void add(Item item) {
@@ -67,25 +73,26 @@ public class LinkedBag<Item> implements Iterable<Item> {
         first.next = oldFirst;
         numberOfElements++;
     }
-    
+
     /**
      * Returns an iterator that iterates over the items in the bag
+     *
      * @return an iterator that iterates over the items in the bag
      */
     @Override
     public Iterator<Item> iterator() {
         return new ListIterator();
     }
-    
+
     // an iterator over a linked list
     private class ListIterator implements Iterator<Item> {
 
         private Node<Item> current;
-        
+
         public ListIterator() {
             current = first;
         }
-        
+
         // is there a next item in the iterator?
         @Override
         public boolean hasNext() {
@@ -95,12 +102,14 @@ public class LinkedBag<Item> implements Iterable<Item> {
         // returns the next item in the iterator (and advances the iterator)
         @Override
         public Item next() {
-            if(!hasNext()) { throw new NoSuchElementException(); }
+            if (!hasNext()) {
+                throw new NoSuchElementException();
+            }
             Item item = current.item;
             current = current.next;
             return item;
         }
-        
+
         @Override
         public void remove() {
             throw new UnsupportedOperationException();

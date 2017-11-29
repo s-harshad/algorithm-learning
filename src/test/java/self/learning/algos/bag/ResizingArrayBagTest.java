@@ -9,8 +9,8 @@ import org.junit.jupiter.api.Test;
 import org.junit.platform.runner.JUnitPlatform;
 import org.junit.runner.RunWith;
 
-/** 
- * 
+/**
+ *
  * @author Harshad Shrishrimal
  */
 @RunWith(JUnitPlatform.class)
@@ -27,14 +27,14 @@ public class ResizingArrayBagTest {
     @Test
     @DisplayName("Should be able to create a bag with initial capacity")
     public void bagCreationWithUserSepcifiedInitialCapacity() {
-        
+
         ResizingArrayBag<String> bagOfString = new ResizingArrayBag<>(3);
         bagOfString.add("Item1");
         bagOfString.add("Item2");
         bagOfString.add("Item3");
-        
-        Assert.assertEquals(3, bagOfString.size()); 
-        
+
+        Assert.assertEquals(3, bagOfString.size());
+
         List<String> actuals = new ArrayList<>();
         for (String s : bagOfString) {
             actuals.add(s);
@@ -42,7 +42,7 @@ public class ResizingArrayBagTest {
 
         Assert.assertThat(actuals, Matchers.containsInAnyOrder("Item1", "Item2", "Item3"));
     }
-    
+
     @Test
     @DisplayName("Should be able to iterate over items in bag")
     public void retrieveElementsFromBag_1() throws Exception {
@@ -52,15 +52,14 @@ public class ResizingArrayBagTest {
         bagOfString.add("Item2");
         bagOfString.add("Item3");
 
-        Assert.assertEquals(3, bagOfString.size());  
-        
+        Assert.assertEquals(3, bagOfString.size());
+
         List<String> actuals = new ArrayList<>();
         for (String s : bagOfString) {
             actuals.add(s);
         }
-        
+
         Assert.assertThat(actuals, Matchers.containsInAnyOrder("Item1", "Item2", "Item3"));
     }
-    
-    
+
 }
