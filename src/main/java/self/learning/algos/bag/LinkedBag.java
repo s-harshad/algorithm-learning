@@ -4,15 +4,18 @@ import java.util.Iterator;
 import java.util.NoSuchElementException;
 
 /**
- *  The {@code LinkedBag} class represents a bag (or multiset) of generic items 
+ *  The {@code LinkedBag} class represents a bag (or multiset) of generic items
+ *  <br>
  *  It supports insertion and iterating over the items in arbitrary order
  *  <p>
  *  This implementation uses a singly linked list with a non-static nested class Node 
+ *  <br>
  *  The <em>add</em>, <em>isEmpty</em>, and <em>size</em> operations take constant time
+ *  <br>
  *  Iteration takes time proportional to the number of items
  *
  *  @author Harshad Shrishrimal
- *  @param <Item> 
+ *  @param <Item> generic 
  */
 public class LinkedBag<Item> implements Iterable<Item> {
 

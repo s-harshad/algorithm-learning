@@ -5,15 +5,19 @@ import java.util.NoSuchElementException;
 
 /**
  *  The {@code ResizingArrayBag} class represents a bag (or multiset) of generic items 
+ *  <br>
  *  It supports insertion and iterating over the items in arbitrary order
  *  <p>
  *  This implementation uses a resizing array
+ *  <br>
  *  The <em>add</em> operation takes constant amortized time
+ *  <br>
  *  The <em>isEmpty</em>, and <em>size</em> operations take constant time
+ *  <br>
  *  Iteration takes time proportional to the number of items
  *
  *  @author Harshad Shrishrimal
- *  @param <Item> 
+ *  @param <Item> generic
  */
 public class ResizingArrayBag<Item> implements Iterable<Item> {
     
@@ -22,6 +26,7 @@ public class ResizingArrayBag<Item> implements Iterable<Item> {
     
     /**
      * Create a bag with initial capacity of 2
+     * <br>
      * When the capacity is full, it will be resized to double it's capacity
      */
     public ResizingArrayBag() {
@@ -31,7 +36,8 @@ public class ResizingArrayBag<Item> implements Iterable<Item> {
     
     /**
      * Create a bag with initial capacity specified by user
-     * When the capacity is full, it will be resized to double it's capacity
+     * <br>
+     * When the capacity is full, it will be resized to double its initial capacity
      * @param initialCapacity initialCapacity for the number of items
      */
     public ResizingArrayBag(int initialCapacity) {
