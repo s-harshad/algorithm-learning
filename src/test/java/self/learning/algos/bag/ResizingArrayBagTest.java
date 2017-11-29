@@ -21,6 +21,7 @@ public class ResizingArrayBagTest {
     public void bagEmptyUponCreation() throws Exception {
         ResizingArrayBag<String> bagOfString = new ResizingArrayBag<>();
         Assert.assertTrue(bagOfString.isEmpty());
+        Assert.assertEquals(0, bagOfString.size());
     }
 
     @Test
@@ -32,6 +33,8 @@ public class ResizingArrayBagTest {
         bagOfString.add("Item2");
         bagOfString.add("Item3");
         
+        Assert.assertEquals(3, bagOfString.size()); 
+        
         List<String> actuals = new ArrayList<>();
         for (String s : bagOfString) {
             actuals.add(s);
@@ -41,7 +44,7 @@ public class ResizingArrayBagTest {
     }
     
     @Test
-    @DisplayName("Should be able to retrieve items from bag")
+    @DisplayName("Should be able to iterate over items in bag")
     public void retrieveElementsFromBag_1() throws Exception {
 
         ResizingArrayBag<String> bagOfString = new ResizingArrayBag<>();
@@ -49,11 +52,13 @@ public class ResizingArrayBagTest {
         bagOfString.add("Item2");
         bagOfString.add("Item3");
 
+        Assert.assertEquals(3, bagOfString.size());  
+        
         List<String> actuals = new ArrayList<>();
         for (String s : bagOfString) {
             actuals.add(s);
         }
-
+        
         Assert.assertThat(actuals, Matchers.containsInAnyOrder("Item1", "Item2", "Item3"));
     }
     
