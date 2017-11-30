@@ -1,8 +1,5 @@
 package self.learning.algos.bag;
 
-import java.util.ArrayList;
-import java.util.List;
-import org.hamcrest.Matchers;
 import org.junit.Assert;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -14,11 +11,11 @@ import org.junit.runner.RunWith;
  * @author Harshad Shrishrimal
  */
 @RunWith(JUnitPlatform.class)
-public class LinkedBagTest {
+class LinkedBagTest {
 
     @Test
     @DisplayName("Bag should be empty upon creation")
-    public void bagEmptyUponCreation() throws Exception {
+    void bagEmptyUponCreation() throws Exception {
         LinkedBag<String> bagOfString = new LinkedBag<>();
         Assert.assertTrue(bagOfString.isEmpty());
         Assert.assertEquals(0, bagOfString.size());
@@ -26,7 +23,7 @@ public class LinkedBagTest {
 
     @Test
     @DisplayName("Should be able to add items to bag")
-    public void bagAddElements() throws Exception {
+    void bagAddElements() throws Exception {
         LinkedBag<String> bag = new LinkedBag<>();
         bag.add("Item1");
         bag.add("Item2");
@@ -37,18 +34,21 @@ public class LinkedBagTest {
 
     @Test
     @DisplayName("Should be able to iterate over items in bag")
-    public void iterateOverElements() throws Exception {
+    void iterateOverElements() throws Exception {
+        String[] expected = new String[]{"Item3", "Item2", "Item1"};
+
         LinkedBag<String> bag = new LinkedBag<>();
         bag.add("Item1");
         bag.add("Item2");
         bag.add("Item3");
 
-        List<String> actuals = new ArrayList<>();
+        String[] actual = new String[3];
+        int i = 0;
         for (String s : bag) {
-            actuals.add(s);
+            actual[i++] = s;
         }
 
-        Assert.assertThat(actuals, Matchers.containsInAnyOrder("Item1", "Item2", "Item3"));
+        Assert.assertArrayEquals(expected, actual);
     }
 
 }

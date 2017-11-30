@@ -14,11 +14,11 @@ import org.junit.runner.RunWith;
  * @author Harshad Shrishrimal
  */
 @RunWith(JUnitPlatform.class)
-public class ResizingArrayBagTest {
+class ResizingArrayBagTest {
 
     @Test
     @DisplayName("Bag should be empty upon creation")
-    public void bagEmptyUponCreation() throws Exception {
+    void bagEmptyUponCreation() throws Exception {
         ResizingArrayBag<String> bagOfString = new ResizingArrayBag<>();
         Assert.assertTrue(bagOfString.isEmpty());
         Assert.assertEquals(0, bagOfString.size());
@@ -26,7 +26,7 @@ public class ResizingArrayBagTest {
 
     @Test
     @DisplayName("Should be able to create a bag with initial capacity")
-    public void bagCreationWithUserSepcifiedInitialCapacity() {
+    void bagCreationWithUserSepcifiedInitialCapacity() {
 
         ResizingArrayBag<String> bagOfString = new ResizingArrayBag<>(3);
         bagOfString.add("Item1");
@@ -45,7 +45,7 @@ public class ResizingArrayBagTest {
 
     @Test
     @DisplayName("Should be able to iterate over items in bag")
-    public void retrieveElementsFromBag_1() throws Exception {
+    void retrieveElementsFromBag() throws Exception {
 
         ResizingArrayBag<String> bagOfString = new ResizingArrayBag<>();
         bagOfString.add("Item1");
