@@ -1,8 +1,5 @@
 package self.learning.algos.stack;
 
-import java.util.ArrayList;
-import java.util.List;
-import org.hamcrest.Matchers;
 import org.junit.Assert;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -126,17 +123,19 @@ class LinkedStackTest {
     @Test
     @DisplayName("Should be able to iterate over the stack in LIFO order")
     void iterateOverElements() {
+
+        String[] expected = new String[]{"Item3", "Item2", "Item1"};
         LinkedStack<String> stack = new LinkedStack<>();
         stack.push("Item1");
         stack.push("Item2");
         stack.push("Item3");
 
-        List<String> actuals = new ArrayList<>();
+        String[] actual = new String[3];
+        int i = 0;
         for (String s : stack) {
-            actuals.add(s);
+            actual[i++] = s;
         }
 
-        Assert.assertThat(actuals, Matchers.containsInAnyOrder("Item1", "Item2", "Item3"));
-
+        Assert.assertArrayEquals(expected, actual);
     }
 }

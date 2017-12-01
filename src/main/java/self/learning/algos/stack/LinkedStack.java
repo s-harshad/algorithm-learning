@@ -132,12 +132,11 @@ public class LinkedStack<Item> implements Iterable<Item> {
 
         @Override
         public boolean hasNext() {
-            return current == null;
+            return current != null;
         }
 
         @Override
         public Item next() {
-
             if (!hasNext()) {
                 throw new NoSuchElementException();
             }
