@@ -11,8 +11,8 @@ import java.util.NoSuchElementException;
  * operations, along with methods for peeking at the first item, testing if the
  * queue is empty, and iterating through the items in FIFO order.
  * <p>
- * This implementation uses a singly linked list with a non-static nested class
- * for linked-list nodes.
+ * This implementation uses a singly linked list with a static nested class for
+ * linked-list nodes.
  * <br>
  * The <em>enqueue</em>, <em>dequeue</em>, <em>peek</em>, <em>size</em>, and
  * <em>is-empty</em>
