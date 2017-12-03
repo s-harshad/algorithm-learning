@@ -7,3 +7,4 @@ So far I have the following
 4.  Queue implementation using link list
 5.  Min Priority Queue using binary heap
 6.  Max Priority Queue using binary heap
+7.  Heapsort
