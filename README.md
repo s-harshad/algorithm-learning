@@ -7,7 +7,9 @@ So far I have the following algorithms
 4.  Queue implementation using link list
 5.  Min Priority Queue using binary heap
 6.  Max Priority Queue using binary heap
-7.  Heapsort
+7.  Heap sort
+8.  Selection Sort
+9.  Insertion Sort
 
 Also, worked on the following interview problems
 1.  Merged K Sorted arrays using Priority Queue
