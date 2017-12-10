@@ -10,6 +10,8 @@ So far I have the following algorithms
 7.  Heap sort
 8.  Selection Sort
 9.  Insertion Sort
+10. Quick Sort
+11. 3-Way Quick Sort
 
 Also, worked on the following interview problems
 1.  Merged K Sorted arrays using Priority Queue
