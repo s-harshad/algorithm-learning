@@ -16,3 +16,4 @@ So far I have the following algorithms
 
 Also, worked on the following interview problems
 1.  Merged K Sorted arrays using Priority Queue
+2.  Merge 2 sorted Link list
