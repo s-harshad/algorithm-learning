@@ -10,7 +10,7 @@ import org.junit.runner.RunWith;
  * @author Harshad Shrishrimal
  */
 @RunWith(JUnitPlatform.class)
-public class SelectionSortTest {
+class SelectionSortTest {
 
     @Test
     @DisplayName("Should be able to sort in ascending order")
