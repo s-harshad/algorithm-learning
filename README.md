@@ -13,6 +13,7 @@ So far I have the following algorithms
 10. Quick Sort
 11. 3-Way Quick Sort
 12. Binomial Heap
+13. Tree Traversal
 
 Also, worked on the following interview problems
 1.  Merged K Sorted arrays using Priority Queue
