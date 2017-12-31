@@ -321,20 +321,9 @@ public class TreeTraversal<Key extends Comparable<Key>> {
         queue.addLast(this.root);
         queue.addLast(DELIMITER_NODE);
 
-        //keep track of the lastVisitedNode.
-        //used to exist from the while lopp below.
-        //we exit when the current node and the last vistited node is the same.
-        //this happens when all nodes are processed and delimiters are pushed twice on the queue.
-        Node<Key> lastVisitedNode = null;
-
         while (!queue.isEmpty()) {
 
             Node<Key> currentNode = queue.removeFirst();
-
-            // exit condition as there will always be one entry in queue
-            if (lastVisitedNode == currentNode) {
-                break;
-            }
 
             if (currentNode.data != DELIMITER_NODE.data) {
 
@@ -351,11 +340,13 @@ public class TreeTraversal<Key extends Comparable<Key>> {
                     queue.addLast(currentNode.right);
                 }
 
-                //update the last visited node
-                lastVisitedNode = currentNode;
             } else {
-                queue.addLast(DELIMITER_NODE);
-                lastVisitedNode = DELIMITER_NODE;
+                // queue empty means all nodes are processed.
+                // no need to add the delimiter.
+                // next iteration will exit the loop.
+                if(!queue.isEmpty()) {
+                    queue.addLast(DELIMITER_NODE);
+                }
             }
         }
 
